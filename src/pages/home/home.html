@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-navbar color="dark">
+        <ion-title text-center>
+            BRADapp
+        </ion-title>
+        <ion-buttons left>
+            <button ion-button menuToggle="leftMenu">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    Bienvenido al administrador de BRADapp.
+    <p>
+        Si desea adicionar un negocio presiona el boton negro y seguido en el "+".
+    </p>
+    <hr/>
+    <h3>Negocios</h3>
+    <ion-list>
+        <ion-item *ngFor="let lista of negocios" (click)="detalleNegocio(lista)">
+            <h2>{{lista.nombreNegocio}}</h2>
+            <p>{{lista.ciudadNegocio}} ({{lista.direccionNegocio}})</p>
+            <p>{{lista.nombrePropietario}} {{lista.apellidoPropietario}}</p>
+            <!-- <button ion-button clear item-end (click)="detalleNegocio(lista)">View</button> -->
+        </ion-item>
+    </ion-list>
+
+    <ion-fab right bottom>
+        <button ion-fab color="dark"><ion-icon name="arrow-dropleft"></ion-icon></button>
+        <ion-fab-list side="left">
+            <button ion-fab (click)="adicionarNegocio()"><ion-icon name="md-add-circle"></ion-icon></button>
+            <button ion-fab (click)="getLocation()"><ion-icon name="md-locate"></ion-icon></button>
+        </ion-fab-list>
+    </ion-fab>
+</ion-content>

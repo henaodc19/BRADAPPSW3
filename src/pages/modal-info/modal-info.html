@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-navbar color="dark">
+        <ion-title text-center>Detalle del negocio</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-card>
+        <!-- <img src="img/nin-live.png" /> -->
+        <ion-card-content>
+            <ion-card-title>
+                {{lista.nombreNegocio}}
+            </ion-card-title>
+            <p>
+                {{lista.descripcion}}
+            </p>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-item>
+        <ion-icon name="md-thumbs-up" item-start></ion-icon>
+        Likes del negocio
+        <ion-badge item-end>260k</ion-badge>
+    </ion-item>
+
+    <div text-center>
+        <button ion-button color="dark" round (click)="navegarAtras()">Regresar</button>
+    </div>
+
+</ion-content>

@@ -1,0 +1,86 @@
+<ion-header>
+    <ion-navbar color="dark">
+        <ion-title text-center>Agregar Negocio</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h4>Datos del negocio</h4>
+    <p>Todos los campos son oblogatorios</p>
+    <ion-list>
+
+        <ion-item>
+            <ion-label floating>Razon social</ion-label>
+            <ion-input type="text" [(ngModel)]="negocio.nombreNegocio"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Direccion</ion-label>
+            <ion-input type="text" [(ngModel)]="negocio.direccionNegocio"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Descripcion</ion-label>
+            <ion-textarea [(ngModel)]="negocio.descripcion"></ion-textarea>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Correo</ion-label>
+            <ion-input type="email" [(ngModel)]="negocio.emailNegocio"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Ciudad</ion-label>
+            <ion-select [(ngModel)]="negocio.ciudadNegocio">
+                <ion-option *ngFor="let ciudad of ciudades" [value]="ciudad">{{ciudad.Nombre}}</ion-option>
+                <!-- <ion-option value="Hogar">Hogar</ion-option> -->
+            </ion-select>
+        </ion-item>
+
+        <div>
+            <ion-item>
+                <ion-label>Categoria</ion-label>
+                <ion-select [(ngModel)]="negocio.categoria">
+                    <ion-option *ngFor="let categoria of categorias" ngValue="categoria">{{categoria.Nombre}}</ion-option>
+                    <!-- <ion-option value="Hogar">Hogar</ion-option> -->
+                </ion-select>
+            </ion-item>
+        </div>
+
+        <ion-item>
+            <ion-label>Sub Categoria</ion-label>
+            <ion-select [(ngModel)]="negocio.subCategoria">
+                <ion-option *ngFor="let subCategoria of subCategorias" ngValue="subCategoria">{{subCategoria.Nombre}}</ion-option>
+                <!-- <ion-option value="Aseo del Hogar">Aseo del hogar</ion-option> -->
+            </ion-select>
+        </ion-item>
+
+        <h4>Datos del Propietario</h4>
+        <p>Todos los campos son oblogatorios</p>
+
+        <ion-item>
+            <ion-label floating>Identificacion</ion-label>
+            <ion-input type="text" [(ngModel)]="negocio.cedula"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Nombre(s)</ion-label>
+            <ion-input type="text" [(ngModel)]="negocio.nombrePropietario"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Apellidos</ion-label>
+            <ion-input type="text" [(ngModel)]="negocio.apellidoPropietario"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Correo</ion-label>
+            <ion-input type="text" [(ngModel)]="negocio.emailPropietario"></ion-input>
+        </ion-item>
+
+    </ion-list>
+    <div text-center>
+        <button ion-button color="dark" round (click)="guardarNegocio()">Guardar</button>
+    </div>
+
+</ion-content>
